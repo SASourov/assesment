@@ -2,39 +2,44 @@ from appium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 
-
-desired_caps = {
-    "platformName": "Android",
-    "platformVersion": "14",
-    "appPackage": "com.nopstation.nopcommerce.nopstationcart",
-    "automationName": "UiAutomator2",
-    "deviceName": "R5CRA0LGSFP"
-}
+desired_caps = {}
+desired_caps['platformVersion'] = '14'
+desired_caps['udid'] = 'R5CRA0LGSFP'
+desired_caps['deviceName'] = 'Glaxy A52s 5G'
+desired_caps['testName'] = "Test 123"
+desired_caps['appPackage'] = 'com.nopstation.nopcommerce.nopstationcart'
+desired_caps['appActivity'] = 'com.bs.ecommerce.main.SplashScreenActivity'
+desired_caps['platformName'] = 'android'
 
 
 def scenario_1():
     driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_caps)
     driver.implicitly_wait(20)
 
-    home_page = driver.find_element(By.CLASS_NAME, "android.widget.ImageView")
+    read_and_accept = driver.find_element(By.ID, "com.nopstation.nopcommerce.nopstationcart:id/btnAccept")
+    read_and_accept.click()
+
+    home_page = driver.find_element(By.XPATH,
+                                    '//android.widget.FrameLayout[@content-desc="Home"]/android.widget.FrameLayout/android.widget.ImageView')
     home_page.click()
 
-    click_on_electronics = driver.find_element(By.XPATH, '(//android.widget.ImageView[@content-desc="Placeholder"])[4]')
+    click_on_electronics = driver.find_element(By.XPATH, '(//android.widget.ImageView[@content-desc="Placeholder"])[7]')
     click_on_electronics.click()
 
-    click_on_bed_mattress = driver.find_element(By.XPATH,
-                                                '(//android.widget.ImageButton[@content-desc="Placeholder"])[3]')
+    click_on_bed_mattress = driver.find_element(By.ID, 'com.nopstation.nopcommerce.nopstationcart:id/ivProductThumb')
     click_on_bed_mattress.click()
 
-    click_on_cart = driver.find_element(By.ID, 'com.nopstation.nopcommerce.nopstationcart:id/counterIcon')
+    click_on_cart = driver.find_element(By.ID, 'com.nopstation.nopcommerce.nopstationcart:id/btnAddToCart')
     click_on_cart.click()
 
     click_on_plus_icon = driver.find_element(By.ID, "com.nopstation.nopcommerce.nopstationcart:id/btnPlus")
     click_on_plus_icon.click()
 
+    driver.close()
+
 
 def scenario_2():
-    driver = webdriver.Remote("http://localhost:4723" , desired_caps)
+    driver = webdriver.Remote("http://localhost:4723", desired_caps)
     driver.implicitly_wait(20)
 
     click_on_check_out = driver.find_element(By.XPATH,
@@ -80,7 +85,8 @@ def scenario_2():
     click_on_continue_btn = driver.find_element(By.ID, "com.nopstation.nopcommerce.nopstationcart:id/btnContinue")
     click_on_continue_btn.click()
 
-    click_on_next_btn = driver.find_element(By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[2]/android.widget.Button")
+    click_on_next_btn = driver.find_element(By.XPATH,
+                                            "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[2]/android.widget.Button")
     click_on_next_btn.click()
 
     click_confirm_button = driver.find_element(By.XPATH, "com.nopstation.nopcommerce.nopstationcart:id/etZipCode")
@@ -103,4 +109,3 @@ def scenario_2():
 
 scenario_1()
 scenario_2()
-
