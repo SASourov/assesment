@@ -67,7 +67,7 @@ select_country_value = driver.find_element(By.XPATH,
 select_country_value.click()
 
 set_company = driver.find_element(By.ID, "com.nopstation.nopcommerce.nopstationcart:id/etCompanyName")
-set_company.send_keys("BS 23 PLC")
+set_company.send_keys("Test Company 23 PLC")
 
 set_city = driver.find_element(By.ID, "com.nopstation.nopcommerce.nopstationcart:id/etCity")
 set_city.send_keys("Dhaka City")
