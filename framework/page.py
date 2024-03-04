@@ -47,10 +47,10 @@ class PlaceOrderAsGuest:
         self.city_name = (By.ID, "com.nopstation.nopcommerce.nopstationcart:id/etCity")
         self.street_num = (By.ID, "com.nopstation.nopcommerce.nopstationcart:id/etStreetAddress")
         self.zip_code = (By.ID, "com.nopstation.nopcommerce.nopstationcart:id/etZipCode")
-        self.next_day_air = (By.ID, "com.nopstation.nopcommerce.nopstationcart:id/etCompanyName")
+        self.next_day_air = (By.ID, 'com.nopstation.nopcommerce.nopstationcart:id/tvPaymentMethodName')
+        self.payment_method = (By.XPATH, 'com.nopstation.nopcommerce.nopstationcart:id/tvPaymentMethodName')
         self.next_button = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[2]/android.widget.Button")
         self.confirm_button = (By.ID, "com.nopstation.nopcommerce.nopstationcart:id/btnContinue")
-        self.bck_arw_button = (By.ID, "com.nopstation.nopcommerce.nopstationcart:id/back_arrow")
 
     def click_on_raed_and_accept(self):
         self.driver.find_element(*self.read_and_accept).click()
@@ -90,6 +90,9 @@ class PlaceOrderAsGuest:
 
     def click_nxt_day_air(self):
         self.driver.find_element(*self.next_day_air).click()
+
+    def set_pay_method(self):
+        self.driver.find_element(*self.payment_method).click()
 
     def click_nxt_btn(self):
         self.driver.find_element(*self.next_button).click()
