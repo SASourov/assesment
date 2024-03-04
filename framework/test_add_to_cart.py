@@ -58,6 +58,7 @@ class Test_001:
         self.ls.scroll_down()
         self.ls.scroll_down()
         self.ls.scroll_down()
+        self.ls.scroll_down()
         time.sleep(2)
         self.po.set_pay_method()
         self.cl.click_continue_button()
