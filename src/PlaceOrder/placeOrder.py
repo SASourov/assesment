@@ -4,7 +4,7 @@ from appium import webdriver
 from selenium.webdriver.common.by import By
 
 from src.PlaceOrder.common_locator import CommonLocator
-from src.PlaceOrder.manage_scrool import LayoutScrool
+from src.PlaceOrder.manage_scrool import LayoutScroll
 
 desired_caps = {}
 desired_caps['platformVersion'] = '14'
@@ -17,7 +17,7 @@ desired_caps['platformName'] = 'android'
 driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_caps)
 driver.implicitly_wait(20)
 
-ls = LayoutScrool(driver)
+ls = LayoutScroll(driver)
 cl = CommonLocator(driver)
 
 
