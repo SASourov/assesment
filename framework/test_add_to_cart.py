@@ -4,7 +4,7 @@ from appium import webdriver
 import pytest
 from selenium.webdriver.common.by import By
 
-from framework.page import AddProductsInCart, PlaceOrderAsGuest
+from framework.page2 import AddProductsInCart, PlaceOrderAsGuest
 from src.PlaceOrder.common_locator import CommonLocator
 from src.PlaceOrder.manage_scrool import LayoutScroll
 
@@ -30,6 +30,8 @@ class Test_001:
         time.sleep(2)
         self.ls.scroll_down()
         self.adtocrt.click_on_plus_icon()
+        time.sleep(2)
+        self.adtocrt.click_add_to_crt_btn()
         self.adtocrt.click_on_crt_btn()
         self.cl = CommonLocator(self.driver)
         self.po = PlaceOrderAsGuest(self.driver)
@@ -76,4 +78,4 @@ class Test_001:
 
         self.driver.quit()
 
-# test runner = pytest
+# test runner = pytest -v -s

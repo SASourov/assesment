@@ -11,6 +11,7 @@ class AddProductsInCart:
         self.bed_mattress = (By.XPATH, '(//android.widget.ImageView[@content-desc="Placeholder"])[6]')
         self.plus_icon = (By.XPATH,
                           '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[4]/android.widget.Button[2]')
+        self.add_to_crt_btn = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.Button[1]")
         self.cart_icon = (By.ID, 'com.nopstation.nopcommerce.nopstationcart:id/btnBuyNow')
 
     def click_on_raed_and_accept(self):
@@ -24,6 +25,9 @@ class AddProductsInCart:
 
     def click_on_plus_icon(self):
         self.driver.find_element(*self.plus_icon).click()
+
+    def click_add_to_crt_btn(self):
+        self.driver.find_element(*self.add_to_crt_btn).click()
 
     def click_on_crt_btn(self):
         self.driver.find_element(*self.cart_icon).click()
@@ -47,9 +51,11 @@ class PlaceOrderAsGuest:
         self.city_name = (By.ID, "com.nopstation.nopcommerce.nopstationcart:id/etCity")
         self.street_num = (By.ID, "com.nopstation.nopcommerce.nopstationcart:id/etStreetAddress")
         self.zip_code = (By.ID, "com.nopstation.nopcommerce.nopstationcart:id/etZipCode")
-        self.next_day_air = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/com.bs.ecommerce.customViews.RadioGridGroupforReyMaterial/android.widget.RelativeLayout[4]/android.widget.TextView[1]')
+        self.next_day_air = (By.XPATH,
+                             '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/com.bs.ecommerce.customViews.RadioGridGroupforReyMaterial/android.widget.RelativeLayout[4]/android.widget.TextView[1]')
         self.payment_method = (By.XPATH, '(//android.widget.ImageView[@content-desc="Placeholder"])[15]')
-        self.next_button = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[2]/android.widget.Button")
+        self.next_button = (By.XPATH,
+                            "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[2]/android.widget.Button")
         self.confirm_button = (By.ID, "com.nopstation.nopcommerce.nopstationcart:id/btnContinue")
 
     def click_on_raed_and_accept(self):
