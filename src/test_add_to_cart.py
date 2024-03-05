@@ -1,12 +1,11 @@
 import time
 
 from appium import webdriver
-import pytest
 from selenium.webdriver.common.by import By
 
-from framework.page import AddProductsInCart, PlaceOrderAsGuest
-from src.PlaceOrder.common_locator import CommonLocator
-from src.PlaceOrder.manage_scrool import LayoutScroll
+from src.add_to_cart import AddProductsInCart, PlaceOrderAsGuest
+from src.common_locator import CommonLocator
+from src.manage_scrool import LayoutScroll
 
 desired_caps = {}
 desired_caps['platformVersion'] = '14'
@@ -78,4 +77,4 @@ class Test_001:
 
         self.driver.quit()
 
-# test runner = pytest -v -s framework/test_add_to_cart.py
+# test runner = pytest -v -s src/test_add_to_cart.py
