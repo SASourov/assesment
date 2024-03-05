@@ -4,7 +4,7 @@ from appium import webdriver
 import pytest
 from selenium.webdriver.common.by import By
 
-from framework.page2 import AddProductsInCart, PlaceOrderAsGuest
+from framework.page import AddProductsInCart, PlaceOrderAsGuest
 from src.PlaceOrder.common_locator import CommonLocator
 from src.PlaceOrder.manage_scrool import LayoutScroll
 
@@ -78,4 +78,4 @@ class Test_001:
 
         self.driver.quit()
 
-# test runner = pytest -v -s
+# test runner = pytest -v -s framework/test_add_to_cart.py
