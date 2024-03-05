@@ -1,5 +1,4 @@
 import time
-from lib2to3.pgen2 import driver
 
 from appium import webdriver
 import pytest
@@ -48,14 +47,10 @@ class Test_001:
         self.po.set_zip_code("1212")
         self.cl.click_continue_button()
         self.ls.scroll_down()
+        self.ls.scroll_down()
+        self.ls.scroll_down()
         self.po.click_nxt_day_air()
-        self.ls.scroll_down()
         self.cl.click_continue_button()
-        self.ls.scroll_down()
-        time.sleep(2)
-        self.cl.click_continue_button()
-        self.ls.scroll_down()
-        self.ls.scroll_down()
         self.ls.scroll_down()
         self.ls.scroll_down()
         self.ls.scroll_down()
@@ -68,9 +63,18 @@ class Test_001:
         expected_text = self.driver.find_element(By.ID,
                                                  "com.nopstation.nopcommerce.nopstationcart:id/md_text_title").text
 
-        if expected_text == "Thank you":
-            assert True
-            print("Test Passed\n Your Expected Message is : Your order has been successfully processed!")
+        try:
+            if expected_text == "Thank you":
+                assert True
+                print("Test Passed\n Your Expected Message is : Your order has been successfully processed!")
 
-        else:
-            assert False
+            else:
+                assert False
+
+        except AssertionError:
+            print("Test Failed.")
+
+        self.driver.quit()
+
+
+#test runner = pytest

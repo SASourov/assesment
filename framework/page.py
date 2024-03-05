@@ -47,8 +47,8 @@ class PlaceOrderAsGuest:
         self.city_name = (By.ID, "com.nopstation.nopcommerce.nopstationcart:id/etCity")
         self.street_num = (By.ID, "com.nopstation.nopcommerce.nopstationcart:id/etStreetAddress")
         self.zip_code = (By.ID, "com.nopstation.nopcommerce.nopstationcart:id/etZipCode")
-        self.next_day_air = (By.ID, 'com.nopstation.nopcommerce.nopstationcart:id/tvPaymentMethodName')
-        self.payment_method = (By.XPATH, 'com.nopstation.nopcommerce.nopstationcart:id/tvPaymentMethodName')
+        self.next_day_air = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/com.bs.ecommerce.customViews.RadioGridGroupforReyMaterial/android.widget.RelativeLayout[4]/android.widget.TextView[1]')
+        self.payment_method = (By.XPATH, '(//android.widget.ImageView[@content-desc="Placeholder"])[15]')
         self.next_button = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[2]/android.widget.Button")
         self.confirm_button = (By.ID, "com.nopstation.nopcommerce.nopstationcart:id/btnContinue")
 
